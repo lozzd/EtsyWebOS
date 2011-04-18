@@ -1,0 +1,9 @@
+{
+	"id": "net.denness.etsy",
+	"version": "1.0.0",
+	"vendor": "Laurie Denness",
+	"type": "web",
+	"main": "index.html",
+	"title": "Etsy",
+	"icon": "icon.png"
+}

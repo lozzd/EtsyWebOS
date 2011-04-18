@@ -1,0 +1,5 @@
+/* TODO: put your application-specific CSS here */
+#header { background-color: #d15600; padding: 10px; height: 20px; }
+#navhome { float: right; text-align: right; color: white  }
+#logo { float: left; }
+#listingPrice { color: dark-gray; font-size: 12px; }
