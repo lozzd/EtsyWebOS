@@ -7,5 +7,9 @@
     {
         "scenes": "search",
         "source": "app/assistants/search-assistant.js"
+    },
+    {
+        "scenes": "listingView",
+        "source": "app/assistants/listingView-assistant.js"
     }
 ]
