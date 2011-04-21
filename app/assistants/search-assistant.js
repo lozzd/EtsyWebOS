@@ -70,9 +70,10 @@ SearchAssistant.prototype.getSearchResults = function(listWidget, offset, limit)
 					item.listingPrice = mylisting.currency_code + ' ' + mylisting.price;
 					item.listing_id = mylisting.listing_id;
 					item.description = mylisting.description;
-					item.state = mylisting.state
-					item.views = mylisting.views
-					item.favouriters = mylisting.num_favourers
+					item.state = mylisting.state;
+					item.views = mylisting.views;
+					item.favouriters = mylisting.num_favorers;
+					item.url = mylisting.url;
 					items[i] = item;
 				}
 				listWidget.mojo.noticeUpdatedItems(offset, items);

@@ -15,7 +15,7 @@ MainAssistant.prototype.setup = function() {
 	this.controller.setupWidget(
 		"searchTerm",
 		{	
-			hintText: "Search Etsy.com",
+			hintText: "Search Etsy Listings",
 			autoFocus: true,
 			autoReplace: false,
 			textCase: Mojo.Widget.steModeLowerCase,

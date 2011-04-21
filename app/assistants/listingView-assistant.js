@@ -18,6 +18,8 @@ ListingViewAssistant.prototype.setup = function() {
 	/* this function is for setup tasks that have to happen when the scene is first created */
 	this.controller.get("listingName").update(gListingdata.listingTitle);
 	this.controller.get("listingDesc").update(gListingdata.description);
+	this.controller.get("listingPriceFull").update(gListingdata.listingPrice);
+	this.controller.get("listingInfo").update(gListingdata.views + " views, " + gListingdata.favouriters + " favs");
 	this.getImageURLs(gListingdata.listing_id);
 	/* use Mojo.View.render to render view templates and add them to the scene, if needed */
 	
@@ -34,9 +36,29 @@ ListingViewAssistant.prototype.setup = function() {
 			onRightFunction: this.rightHandler
 		}
 	);
-	
+	this.controller.setupWidget('buyButton', this.buttonAttribtues = {}, 
+		this.buttonModel = {
+			"label" : "Buy",
+			"buttonClass" : "",
+			"disabled" : false
+		}
+	);
+			
 	/* add event handlers to listen to events from widgets */
+	Mojo.Event.listen(this.controller.get("buyButton"), Mojo.Event.tap, this.openURL.bind(this));
 };
+
+ListingViewAssistant.prototype.openURL = function(event) {
+	this.controller.serviceRequest('palm://com.palm.applicationManager', {
+		method: 'open',
+		parameters: {
+			id: 'com.palm.app.browser',
+			params: {
+				target: gListingdata.url
+			}
+		}
+	});
+}
 
 ListingViewAssistant.prototype.leftHandler = function() {
 		this.movePhotoIndex('left');

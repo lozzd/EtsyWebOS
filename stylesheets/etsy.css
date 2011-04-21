@@ -3,3 +3,6 @@
 #navhome { float: right; text-align: right; color: white  }
 #logo { float: left; }
 #listingPrice { color: dark-gray; font-size: 12px; }
+#listingPriceFull { float: left; }
+#listingInfo { float: right; }
+.lessPadding { padding: 2px; }
